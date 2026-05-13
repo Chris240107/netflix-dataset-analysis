@@ -38,5 +38,9 @@ df.dropna(inplace = True)
 type_and_date = df[['type', 'date_added']].copy()
 type_and_date['date_added'] = pd.to_datetime(type_and_date['date_added'], format='mixed')
 type_and_date['month_added'] = pd.DatetimeIndex(type_and_date['date_added']).month
+type_and_date['year_added'] = pd.DatetimeIndex(type_and_date['date_added']).year
 #maybe corelation or causation can be found
-#print(type_and_date)
+#print(type_and_date['month_added'].value_counts())
+#print(type_and_date['year_added'].value_counts())
+
+
