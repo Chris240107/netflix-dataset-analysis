@@ -23,8 +23,9 @@ print(percent_missing)
 #df['cast'].replace(np.nan, 'No Data', inplace = True)
 
 df.fillna({'director' : 'No Data'}, inplace = True)
-print(df.loc[:, ['director']])
+df.fillna({'country' : 'No Data'}, inplace = True)
+df.fillna({'cast' : 'No Data'}, inplace = True)
 
-check = df[df['director'].isnull()]
-print(check)
-
+print(df.isnull().sum())
+df.dropna(inplace = True)
+print(df.isnull().sum())
